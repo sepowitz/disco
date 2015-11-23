@@ -1,0 +1,18 @@
+{
+  "name": "disco",
+  "description": "music discovery application",
+  "main": "index.js",
+  "authors": [
+    "Sebastian Odell <sebastianodell@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
