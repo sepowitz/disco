@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html lang="en" ng-app="DiscoGrid">
 <head>
-	<title></title>
+  <meta charset="utf-8">
+
+  <title>DiscoGrid</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+	<script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="/bower_components/angular/angular.min.js" type="text/javascript"></script>
+  <script src="/bower_components/angular-animate/angular-animate.min.js" type="text/javascript"></script>
+  <script src="/bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+  <script src="app/app.module.js"></script>
+	<base href="/"></base>
 </head>
+
 <body>
 
-	<h1>Herro, Worrrddd</h1>
+	<ng-view></ng-view>
+
+  <script src="app/app.routes.js"></script>
 </body>
 </html>
