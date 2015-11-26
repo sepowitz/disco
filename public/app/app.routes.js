@@ -1,23 +1,20 @@
-app.config(function($routeProvider, $locationProvider) {
-	$routeProvider
-	.when('/intro', {
-		templateUrl: 'components/intro.html',
-		controller: 'IntroController',
-		resolve: {
-			// 1s delay to load partial
-			delay: function($q, $timeout) {
-				var delay = $q.defer();
-				$timeout(delay.resolve, 1000);
-				return delay.promise
-			}
-		}
-	}).
+app.config( function($routeProvider, $locationProvider) {
+	$routeProvider.
+	when('/intro', {
+		templateUrl: '/app/components/intro.html',
+		controller: 'IntroController'
+		}).
 	when('/explore', {
-		templateUrl: 'components/explore.html',
+		templateUrl: '/app/components/explore.html',
 		controller: 'ExploreController'
 	}).
 	when('/explore/:artist', {
-		templateUrl: 'components/artist.html',
+		templateUrl: '/app/components/artist.html',
 		controller: 'ExploreController'
-	})
+	}).
+	otherwise({	
+		redirectTo: '/'	
+	});
+
+	$locationProvider.html5Mode(true);
 });
