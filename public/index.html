@@ -11,16 +11,17 @@
   <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
   <script src="bower_components/angular-animate/angular-animate.min.js" type="text/javascript"></script>
   <script src="bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
-	<base href="/"></base>
+	<base href="/explore"></base>
 </head>
 
 <body>
-	<h1>hello</h1>
+
+	<h1>{{exploreCtrl.name}}</h1>
 	<ng-view></ng-view>
 
 	<script src="app/app.module.js"></script>
   <script src="app/app.routes.js"></script>
-  <script src="app/controllers/intro_controller.js"></script>
   <script src="app/controllers/explore_controller.js"></script>
+   <script src="app/controllers/artist_controller.js"></script>
 </body>
 </html>

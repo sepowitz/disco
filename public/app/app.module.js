@@ -1,1 +1,1 @@
-var app = angular.module('DiscoGrid', ['ngRoute', 'ngAnimate']);
+angular.module('DiscoGrid', ['ngRoute', 'ngAnimate']);
