@@ -1,8 +1,9 @@
 angular.module('DiscoGrid').config( function($routeProvider, $locationProvider) {
 	$routeProvider.
-	when('explore/:artist', {
+	when('/explore/:artist', {
 		templateUrl: '/app/components/artist.html',
-		controller: 'ArtistController'
+		controller: 'ArtistController',
+		controllerAs: 'artistCtrl'
 	}).
 	otherwise({	
 		redirectTo: '/explore'

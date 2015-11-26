@@ -1,4 +1,3 @@
-angular.module('DiscoGrid').controller('ArtistController', [ function ($scope, $http){
-	var that = this;
-	that.name = 'Artist'
+angular.module('DiscoGrid').controller('ArtistController', ['$scope', '$http', function($scope, $http){
+	this.name = "the Artist"
 }]);
