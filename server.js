@@ -22,17 +22,3 @@ server.listen(PORT, function(){
 	console.log('listening on port ' + PORT)
 });
 
-
-
-/*
-
-//API KEY
-EN_AK = C1WGDIOXYOUYDDOK0 
-
-//Consumer Key
-EN_CK = 0640ef95e11d3175a202997b2c67a030 
-
-//Shared Secret
-EN_SS = vmcTdmuATougAVY8TCWt3w
-
-*/
