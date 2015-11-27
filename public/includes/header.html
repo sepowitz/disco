@@ -1,3 +1,7 @@
 <div style="width: 100%; background: red;">
 	<h1>discogrid</h1>
+	<form ng-submit="exploreCtrl.searchArtist(exploreCtrl.artistName)">
+		<input type="text" placeholder="search by artist name" ng-model="exploreCtrl.artistName" >
+		<input type="submit" value="search">
+	</form>
 </div>

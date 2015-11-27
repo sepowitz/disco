@@ -6,11 +6,15 @@ var express = require('express'),
 dotenv.load();
 
 //render public directory
+
+
 server.use('/bower_components', express.static('./bower_components'));
 
-// Here's the new code:
 server.use(express.static(__dirname + '/public'));
 
+server.get('/explore/:artist', function(req, res){
+	console.log(req.params.artist)
+})
 
 //This delegates all front-end routing to angular
 server.get('*', function(req, res) {
