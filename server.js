@@ -16,8 +16,8 @@ server.use(express.static(__dirname + '/public'));
 //This gets artist data
 server.get('/explore/:artist', function(req, res){
 	var ARTIST = req.params.artist;
-	request('http://developer.echonest.com/api/v4/artist/profile?api_key=' + process.env.EN_AK + '&name=' + ARTIST + '&bucket=biographies&bucket=blogs&bucket=images', function(err, res, bod){
-		console.log(bod)
+	request('http://developer.echonest.com/api/v4/artist/profile?api_key=' + process.env.EN_AK + '&name=' + ARTIST + '&bucket=biographies&bucket=blogs&bucket=images', function(error, response, body){
+		res.send(body)
 	})
 })
 

@@ -3,6 +3,7 @@ angular.module('DiscoGrid').controller('ExploreController', ['$scope', '$http', 
 			explore.searchArtist = function(artist){
 				$http.get('/explore/' + artist ).success(function(data){
 					explore.data = data;
+					console.log(explore.data)
 				})
 			}
 }]);
