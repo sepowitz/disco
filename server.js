@@ -14,11 +14,15 @@ server.use('/bower_components', express.static('./bower_components'));
 server.use(express.static(__dirname + '/public'));
 
 //This gets artist data
-server.get('/explore/:artist', function(req, res){
-	var ARTIST = req.params.artist;
-	// request('http://developer.echonest.com/api/v4/artist/profile?api_key=' + process.env.EN_AK + '&name=' + ARTIST + '&bucket=biographies&bucket=blogs&bucket=images&bucket=id:spotify', function(error, response, body){
-		request('http://developer.echonest.com/api/v4/artist/search?api_key=' + process.env.EN_AK + '&format=json&artist_location=country:' + ARTIST + '&bucket=artist_location', function(error, response, body){
-		res.send(body)
+server.get('/explore/:country', function(req, res){
+	var COUNTRY = req.params.country;
+		//Request artist by country
+		request('http://developer.echonest.com/api/v4/artist/search?api_key=' + process.env.EN_AK + '&format=json&artist_location=country:' + COUNTRY + '&bucket=artist_location&bucket=biographies&bucket=id:spotify', function(error, response, body){
+		//Parse response in order to extract artist name	
+		var parsedRes = JSON.parse(body);
+		var ARTIST = (parsedRes.response.artists[Math.floor(Math.random() * parsedRes.response.artists.length)])
+		//Make subsequent call for select artists' related tracks
+		res.send(ARTIST)
 	})
 })
 
