@@ -25,17 +25,20 @@
 
   <div ng-show="exploreCtrl.data" class='container intro'>
     <div class="row">
-      <div class="col-md-4 fixed">
-      <img class="img-rounded img-responsive" ng-src="{{exploreCtrl.data.video[0].image_url}}">
-      <h4>{{exploreCtrl.data.name}}</h4>
-      <h5>{{exploreCtrl.data.artist_location.location}}</h5>
-      <div class="list-group">
-        <a ng-repeat="blog in exploreCtrl.data.blogs" href="{{blog.url}}" class="list-group-item">{{blog.name}}</a>
-      </div>
+      <div class="col-md-4">
+        <img class="img-rounded img-responsive" ng-src="{{exploreCtrl.data.video[0].image_url}}">
+        <h4>{{exploreCtrl.data.name}}</h4>
+        <h5>{{exploreCtrl.data.artist_location.location}}</h5>
+
+        <h6>Articles</h6>
+        <div class="list-group">
+          <a ng-repeat="blog in exploreCtrl.data.blogs" href="{{blog.url}}" class="list-group-item">{{blog.name}}</a>
+        </div>
+
       </div>
       <div class="col-md-8 bio">
-      <h5><a href={{exploreCtrl.bio.url}}>Biography</a></h5>
-      <p>{{exploreCtrl.bio.text}}</p>
+        <h6>Biography</h6>
+        <p><a href="{{exploreCtrl.bio.url}}">{{exploreCtrl.bio.text}}</a></p>
       </div>
     </div>
   </div>
