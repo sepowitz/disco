@@ -23,24 +23,32 @@
 
 	<div ng-view></div>
 
-  <div class='container intro'>
+  <div ng-show="exploreCtrl.data" class='container intro'>
     <div class="row">
       <div class="col-md-4 fixed">
-      <img class="thumbnail" ng-src="{{exploreCtrl.data.video[0].image_url}}">
+      <img class="img-rounded img-responsive" ng-src="{{exploreCtrl.data.video[0].image_url}}">
       <h4>{{exploreCtrl.data.name}}</h4>
-      <h4>{{exploreCtrl.data.artist_location.location}}</h4>
+      <h5>{{exploreCtrl.data.artist_location.location}}</h5>
       <div class="list-group">
         <a ng-repeat="blog in exploreCtrl.data.blogs" href="{{blog.url}}" class="list-group-item">{{blog.name}}</a>
       </div>
       </div>
-      <div class="col-md-8">{{exploreCtrl.bio.text}}</div>
+      <div class="col-md-8 bio">
+      <h5><a href={{exploreCtrl.bio.url}}>Biography</a></h5>
+      <p>{{exploreCtrl.bio.text}}</p>
+      </div>
     </div>
+  </div>
+
+  <div ng-show="!exploreCtrl.data" class="animon-container">
+    <div class='animon'></div>
   </div>
 
   <div ng-show="exploreCtrl.error">
     <p>{{exploreCtrl.errorMessage}}</p>
   </div>
 
+  <div ng-include src="'includes/footer.html'"></div>
 	<script src="app/app.module.js"></script>
   <script src="app/app.routes.js"></script>
   <script src="app/controllers/explore_controller.js"></script>
