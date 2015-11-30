@@ -35,6 +35,13 @@
           <a ng-repeat="blog in exploreCtrl.data.blogs" href="{{blog.url}}" class="list-group-item">{{blog.name}}</a>
         </div>
 
+        <h6>Video</h6>
+        <div class="row">
+          <div ng-repeat="video in exploreCtrl.data.video" class="col-md-4">
+            <a href="{{video.url}}"><img class="img-responsive" ng-src="{{video.image_url}}" alt="artist video"></a>
+          </div>
+        </div>
+
       </div>
       <div class="col-md-8 bio">
         <h6>Biography</h6>
