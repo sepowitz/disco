@@ -18,8 +18,7 @@ server.get('/explore/:country', function(req, res){
 	var COUNTRY = req.params.country;
 		//Request artist by country
 		request('http://developer.echonest.com/api/v4/artist/search?api_key=' + process.env.EN_AK + '&format=json&artist_location=country:' + COUNTRY + '&bucket=artist_location&bucket=biographies&bucket=blogs&bucket=video&bucket=id:spotify', function(error, response, body){
-		//Parse response in order to extract artist name
-		console.log(body)	
+		//Parse response in order to ensure there wasn't an error
 		var parsedRes = JSON.parse(body);
 		if(parsedRes.response.artists < 1){
 			res.send('Oops, there was a problem')

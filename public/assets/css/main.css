@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+.intro {
+	margin-top: 10%;
+}
+
+body {
+	background: black;
+}
+
+.bio p {
+	max-height: 800px;
+	overflow: scroll;
+}
+
+.animon-container {
+	width: 100%;
+	text-align: center;
+}
+.animon {
+	background: white;
+	border-radius: 50%;
+	margin: 20% auto;
+	animation: bounce 2s linear infinite;
+}
+
+@keyframes bounce {
+   0% 	{ transform:translateY(-100%); width: 10px; height: 10px; background: #0000ff;  }
+   20% 	{ transform:translateY(-120%); width: 50px; height: 50px; }
+   30% 	{ transform:translateY(-140%); width: 80px; height: 80px; }
+   60% 	{ transform:translateY(-120%); width: 80px; height: 80px; }
+   80% 	{ transform:translateY(-100%); width: 50px; height: 50px; }
+   100% { transform:translateY(-80%); width: 10px; height: 10px; background: #E5E5FF;}
+}
