@@ -13,9 +13,30 @@ body {
 	background: black;
 }
 
+p {
+	color: #E8E8E8;
+}
+
+h4, h5 {
+	color: #CDC9C9;
+}
+
+
+h6:first-of-type {
+	margin-top: 50px;
+}
+
+h6 {
+	color: #00EEEE;
+}
+
 .bio p {
 	max-height: 800px;
-	overflow: scroll;
+	overflow: hidden;
+}
+
+.bio p a {
+	color: #E8E8E8;
 }
 
 .animon-container {
