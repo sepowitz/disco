@@ -8,6 +8,7 @@
   <meta name="author" content="Sebastian Odell">
 
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
   <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
   <script src="bower_components/angular-animate/angular-animate.min.js" type="text/javascript"></script>
@@ -22,12 +23,15 @@
 
 	<div ng-view></div>
 
-  <div class='container'>
+  <div class='container intro'>
     <div class="row">
-      <div class="col-md-4">
-      <img style="width: 50%;" ng-src="{{exploreCtrl.data.video[0].image_url}}">
+      <div class="col-md-4 fixed">
+      <img class="thumbnail" ng-src="{{exploreCtrl.data.video[0].image_url}}">
       <h4>{{exploreCtrl.data.name}}</h4>
       <h4>{{exploreCtrl.data.artist_location.location}}</h4>
+      <div class="list-group">
+        <a ng-repeat="blog in exploreCtrl.data.blogs" href="{{blog.url}}" class="list-group-item">{{blog.name}}</a>
+      </div>
       </div>
       <div class="col-md-8">{{exploreCtrl.bio.text}}</div>
     </div>
