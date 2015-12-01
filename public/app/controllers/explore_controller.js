@@ -1,7 +1,7 @@
 angular.module('DiscoGrid').controller('ExploreController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
 	var explore = this;
 			explore.error = false;
-			explore.errorMessage = "Whoops! Looks like there was an issue, try again!"
+			explore.errorMessage = "Whoops, looks like there was an issue. Give it another spin."
 			explore.searchCountry = function(country){
 				$http.get('/explore/' + country ).success(function(data){
 					explore.data = data;
