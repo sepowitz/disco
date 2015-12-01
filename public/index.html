@@ -7,8 +7,10 @@
   <title>Discogrid</title>
   <meta name="author" content="Sebastian Odell">
 
+  <link rel='shortcut icon' href='assets/img/disco_fav.ico' type='image/x-icon'/ >
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
 	<script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
   <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
@@ -26,7 +28,7 @@
     <div class="row">
       <div class="col-md-4">
         <img class="img-rounded img-responsive" ng-src="{{exploreCtrl.data.video[0].image_url}}">
-        <h4>{{exploreCtrl.data.name}}</h4>
+        <h4>{{exploreCtrl.data.name}}, <small>{{exploreCtrl.data.years_active[0].start}}</small></h4>
         <h5>{{exploreCtrl.data.artist_location.location}}</h5>
 
         <h6>Articles</h6>
@@ -35,21 +37,21 @@
         </div>
 
         <h6>Video</h6>
-        <div class="row">
+        <div class="row vid-row">
           <div ng-repeat="video in exploreCtrl.data.video | limitTo: 9" class="col-md-4">
-            <a style="width: 100%;" href="{{video.url}}"><img class="img-responsive" ng-src="{{video.image_url}}" alt="artist video"></a>
+            <a class="thumbnail" href="{{video.url}}"><img ng-src="{{video.image_url}}" alt="artist video"></a>
           </div>
         </div>
 
       </div>
       <div class="col-md-8 bio">
         <h6>Biography</h6>
-        <p><a href="{{exploreCtrl.bio.url}}">{{exploreCtrl.bio.text}}</a></p>
+        <p><a href="{{exploreCtrl.bio.url}}" target="_blank">{{exploreCtrl.bio.text}}</a></p>
       </div>
     </div>
   </div>
 
-  <div ng-show="!exploreCtrl.data" class="animon-container">
+  <div ng-show="exploreCtrl.loading" class="animon-container">
     <div class='animon'></div>
   </div>
 
