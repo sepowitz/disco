@@ -1,5 +1,5 @@
 #Discogrid
-## A GLobal Artist Discovery App
+ A Global Musical Artist Discovery App
 
 ##Technology Stack
 - Node
