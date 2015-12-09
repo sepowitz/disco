@@ -9,6 +9,7 @@
 
   <link rel='shortcut icon' href='assets/img/disco_fav.ico' type='image/x-icon'/ >
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
@@ -24,6 +25,13 @@
 
   <!-- Header Include -->
 	<header ng-include src="'includes/header.html'"></header>
+
+  <div class="grid-copy" ng-if="exploreCtrl.searchStart">
+    <h2><i class="fa fa-search"></i></i>search by country</h2>
+    <h2><i class="fa fa-music"></i>discover an artist</h2>
+    <h2><i class="fa fa-globe"></i>explore the world</h2>
+
+  </div>
 
   <div ng-show="exploreCtrl.data && !exploreCtrl.error" class='container intro'>
     <div class="row">
@@ -60,11 +68,20 @@
     <p>{{exploreCtrl.errorMessage}}</p>
   </div>
 
+  <div id="world-map" style="width: 600px; height: 400px"></div>
+
   <!-- Footer Include -->
   <div ng-include src="'includes/footer.html'"></div>
+  
 	<script src="app/app.module.js"></script>
   <script src="app/app.routes.js"></script>
   <script src="app/controllers/explore_controller.js"></script>
-   <script src="app/controllers/artist_controller.js"></script>
+  <script src="app/controllers/artist_controller.js"></script>
+  <script type="text/javascript">
+    //This triggers the grid-copy fade-in after page load
+    setTimeout(function(){
+      $('.grid-copy h2').addClass('show');
+    }, 500);
+  </script>
 </body>
 </html>
