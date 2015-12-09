@@ -2,6 +2,12 @@ angular.module('DiscoGrid').controller('ExploreController', ['$scope', '$http', 
 	var explore = this;
 			explore.error = false;
 			explore.loading = false;
+			explore.searchStart = true;
+			explore.clearBg = function(){
+				var body = document.querySelector('body');
+				body.style.background = 'black';
+				explore.searchStart = false;
+			};
 			explore.errorMessage = "Whoops, looks like there was an issue. Give it another spin."
 			explore.searchCountry = function(country){
 				explore.loading = true;
