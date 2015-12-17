@@ -22,8 +22,8 @@ body {
 }
 
 .grid-copy {
-	width: 40%;
-	text-align: left;
+	width: 100%;
+	text-align: center;
 	margin: 15% auto -10% auto;
 	color: white;
 	font-size: 100px;
